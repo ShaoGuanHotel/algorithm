@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 三角形 -->
+    <div class="square"></div>
+    <style>
+      .square {
+        width: 0;
+        height: 0;
+        border: 100px solid;
+        border-color: transparent transparent yellow;
+      }
+    </style>
+
+    <!-- 斜线 -->
+    <div class="xie-xian">
+      <div class="left">商品介绍</div>
+      <div class="line"></div>
+      <div class="right">商品评价</div>
+    </div>
+    <style>
+      .xie-xian {
+        width: 220px;
+        height: 40px;
+        margin-top: 50px;
+      }
+      .xie-xian div {
+        line-height: 40px;
+        text-align: center;
+      }
+      .xie-xian .left {
+        float: left;
+        width: 100px;
+        background-color: tomato;
+      }
+      .xie-xian .right {
+        float: right;
+        width: 100px;
+        background-color: turquoise;
+      }
+      .xie-xian .line {
+        float: left;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: tomato turquoise turquoise tomato;
+        border-width: 40px 20px 0 0;
+      }
+    </style>
+
+    <!-- 标签 -->
+    <div class="tag-container">
+      <div class="tag">
+        <div class="small-triangle"></div>
+        <div class="text">介绍</div>
+        <div class="big-triangle"></div>
+      </div>
+    </div>
+    <style>
+      .tag-container {
+        width: 600px;
+        margin-top: 100px;
+        border-top: 1px solid gainsboro;
+        height: 100px;
+        position: relative;
+      }
+      .tag {
+        position: absolute;
+        left: 30px;
+        top: -20px;
+      }
+      .tag .text {
+        width: 60px;
+        height: 80px;
+        background-color: rgb(225, 67, 64);
+        text-align: center;
+        line-height: 80px;
+        color: white;
+      }
+      .small-triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px;
+        border-color: transparent rgb(225, 67, 64) rgb(225, 67, 64) transparent;
+        position: absolute;
+        left: -20px;
+      }
+      .big-triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 30px;
+        border-color: rgb(225, 67, 64) rgb(225, 67, 64) transparent rgb(225, 67, 64);
+      }
+    </style>
+
+    <!-- 深度挖掘border-radius https://juejin.im/post/6844903687324712974 -->
+
+  </body>
+</html>

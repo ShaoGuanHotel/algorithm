@@ -6,101 +6,258 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- 三角形 -->
-    <div class="square"></div>
-    <style>
-      .square {
-        width: 0;
-        height: 0;
-        border: 100px solid;
-        border-color: transparent transparent yellow;
-      }
-    </style>
-
-    <!-- 斜线 -->
-    <div class="xie-xian">
-      <div class="left">商品介绍</div>
-      <div class="line"></div>
-      <div class="right">商品评价</div>
-    </div>
-    <style>
-      .xie-xian {
-        width: 220px;
-        height: 40px;
-        margin-top: 50px;
-      }
-      .xie-xian div {
-        line-height: 40px;
-        text-align: center;
-      }
-      .xie-xian .left {
-        float: left;
-        width: 100px;
-        background-color: tomato;
-      }
-      .xie-xian .right {
-        float: right;
-        width: 100px;
-        background-color: turquoise;
-      }
-      .xie-xian .line {
-        float: left;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-color: tomato turquoise turquoise tomato;
-        border-width: 40px 20px 0 0;
-      }
-    </style>
-
-    <!-- 标签 -->
-    <div class="tag-container">
-      <div class="tag">
-        <div class="small-triangle"></div>
-        <div class="text">介绍</div>
-        <div class="big-triangle"></div>
-      </div>
-    </div>
-    <style>
-      .tag-container {
-        width: 600px;
-        margin-top: 100px;
-        border-top: 1px solid gainsboro;
-        height: 100px;
-        position: relative;
-      }
-      .tag {
-        position: absolute;
-        left: 30px;
-        top: -20px;
-      }
-      .tag .text {
-        width: 60px;
-        height: 80px;
-        background-color: rgb(225, 67, 64);
-        text-align: center;
-        line-height: 80px;
-        color: white;
-      }
-      .small-triangle {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 10px;
-        border-color: transparent rgb(225, 67, 64) rgb(225, 67, 64) transparent;
-        position: absolute;
-        left: -20px;
-      }
-      .big-triangle {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 6px 30px;
-        border-color: rgb(225, 67, 64) rgb(225, 67, 64) transparent rgb(225, 67, 64);
-      }
-    </style>
-
     <!-- 深度挖掘border-radius https://juejin.im/post/6844903687324712974 -->
+    <!-- 
+      border-radius: 100px 100px 100px 100px/50px 50px 50px 50px;
+      我们简单分析一下上面的代码。“/”的左边表示的其实是左上，右上，右下，左下四个角水平方向的半径，
+      而“/”右边表示的左上，右上，右下，左下四个角垂直方向的半径。
 
+      % 百分比的参考对象是：边框+内边距+height/width
+     -->
+    <div class="flex">
+      <div class="item"><div class="demo1">1</div></div>
+      <style>
+        .demo1 {
+          background: rgb(173, 216, 231);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 100px;
+          /*  */
+          /* border-radius: 50% 50% 50% 50%/50% 50% 50% 50%; */
+          border-radius: 50%;
+        }
+      </style>
+
+      <div class="item"><div class="demo2">2</div></div>
+      <style>
+        .demo2 {
+          background: rgb(173, 216, 231);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 50px;
+          /*  */
+          /* border-radius: 100% 0 0 0/100% 0 0 0; */
+          border-radius: 100% 50%/0 100%;
+        }
+      </style>
+
+      <div class="item"><div class="demo3">3</div></div>
+      <style>
+        .demo3 {
+          background: rgb(143, 238, 147);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 50px;
+          /*  */
+          /* border-radius: 100% 0 100% 0/100% 0 100% 0; */
+          border-radius: 100% 0;
+        }
+      </style>
+
+      <div class="item"><div class="demo4">4</div></div>
+      <style>
+        .demo4 {
+          background: rgb(143, 238, 147);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 50px;
+          /*  */
+          /* border-radius: 0 100% 0 100%/0 100% 0 100%; */
+          border-radius: 0 100%;
+        }
+      </style>
+
+      <div class="item"><div class="demo5">5</div></div>
+      <style>
+        .demo5 {
+          background: rgb(254, 160, 123);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 100px;
+          /*  */
+          border-radius: 100% 50%;
+        }
+      </style>
+
+      <div class="item"><div class="demo6">6</div></div>
+      <style>
+        .demo6 {
+          background: rgb(254, 160, 123);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 100px;
+          border: 10px solid gold;
+          border-radius: 150px 400px 150px 400px/400px 150px 400px 150px;
+        }
+      </style>
+
+      <div class="item"><div class="demo7">7</div></div>
+      <style>
+        .demo7 {
+          background: linear-gradient(to bottom, #fbbcd0, #fbaac3);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 50px;
+          border-radius: 150px 14px/150px 14px;
+          box-shadow: 0 10px 10px #b9174c;
+        }
+      </style>
+
+      <div class="item"><div class="demo8">8</div></div>
+      <style>
+        .demo8 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 0;
+          width: 100px;
+          border-bottom: 50px solid yellow;
+          border-left: 25px solid transparent;
+          border-right: 25px solid transparent;
+        }
+      </style>
+
+      <div class="item"><div class="demo9">9</div></div>
+      <style>
+        .demo9 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 0;
+          height: 0;
+          border: 50px solid;
+          border-color: transparent yellow transparent transparent;
+        }
+      </style>
+
+      <div class="item2">
+        <div class="xie-xian">
+          <div class="left">10.商品介绍</div>
+          <div class="line"></div>
+          <div class="right">商品评价</div>
+        </div>
+      </div>
+      <style>
+        .xie-xian {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 400px;
+          height: 200px;
+        }
+        .xie-xian div {
+          line-height: 40px;
+          text-align: center;
+        }
+        .xie-xian .left {
+          float: left;
+          width: 100px;
+          background-color: tomato;
+        }
+        .xie-xian .right {
+          float: right;
+          width: 100px;
+          background-color: turquoise;
+        }
+        .xie-xian .line {
+          float: left;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: tomato turquoise turquoise tomato;
+          border-width: 40px 20px 0 0;
+        }
+      </style>
+
+      <div class="item">
+        <div class="tag-container">
+          <div class="tag">
+            <div class="small-triangle"></div>
+            <div class="text">11</div>
+            <div class="big-triangle"></div>
+          </div>
+        </div>
+      </div>
+      <style>
+        .tag-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 400px;
+          border-top: 1px solid gainsboro;
+          height: 100px;
+          position: relative;
+        }
+        .tag {
+          position: absolute;
+          left: 30px;
+          top: -20px;
+        }
+        .tag .text {
+          width: 60px;
+          height: 80px;
+          background-color: rgb(225, 67, 64);
+          text-align: center;
+          line-height: 80px;
+          color: white;
+        }
+        .small-triangle {
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 10px;
+          border-color: transparent rgb(225, 67, 64) rgb(225, 67, 64) transparent;
+          position: absolute;
+          left: -20px;
+        }
+        .big-triangle {
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 6px 30px;
+          border-color: rgb(225, 67, 64) rgb(225, 67, 64) transparent rgb(225, 67, 64);
+        }
+      </style>
+    </div>
   </body>
+  <style>
+    .flex {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .item {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid gainsboro;
+    }
+    .item2 {
+      width: 420px;
+      height: 200px;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid gainsboro;
+    }
+  </style>
 </html>
